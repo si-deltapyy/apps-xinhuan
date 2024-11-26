@@ -4,12 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'pages/bluetooth',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'pages/graph',
+    loadChildren: () => import('./pages/graph/graph.module').then( m => m.GraphPageModule)
+  },
+  {
+    path: 'pages/bluetooth',
+    loadChildren: () => import('./pages/bluetooth/bluetooth.module').then( m => m.BluetoothPageModule)
+  },
+  {
+    path: 'pages/info',
+    loadChildren: () => import('./pages/info/info.module').then( m => m.InfoPageModule)
   }
 ];
 
